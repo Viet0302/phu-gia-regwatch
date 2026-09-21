@@ -1,0 +1,130 @@
+# Danh sách văn bản theo dõi hằng ngày.
+# kind: html = tải trang, lấy phần text; pdf = tải file, so nội dung text; head = chỉ so Last-Modified/ETag/kích thước
+# manual: true = nguồn chặn công cụ tự động, chỉ nhắc mở kiểm tra thủ công theo chu kỳ
+sources:
+  - id: codex-standards
+    market: Codex
+    name: Danh mục tiêu chuẩn Codex (theo dõi bản sửa đổi CXS 192-1995)
+    url: https://www.fao.org/fao-who-codexalimentarius/codex-texts/list-standards/en/
+    kind: html
+    watch_for: ["CXS 192", "192-1995", "food additives"]
+
+  - id: codex-ccfa
+    market: Codex
+    name: Tin của Ủy ban Codex về phụ gia thực phẩm (CCFA)
+    url: https://www.fao.org/fao-who-codexalimentarius/committees/committee/en/?committee=CCFA
+    kind: html
+
+  - id: vn-tt24-vcci
+    market: Việt Nam
+    name: TT 24/2019/TT-BYT trên cổng VCCI
+    url: https://vanban.vcci.com.vn/thong-tu-242019tt-byt-quy-dinh-ve-quan-ly-va-su-dung-phu-gia-thuc-pham
+    kind: html
+
+  - id: vn-vbpl-search
+    market: Việt Nam
+    name: CSDL quốc gia về pháp luật – tìm "phụ gia thực phẩm"
+    url: https://vbpl.vn/TW/Pages/vbpq-timkiem.aspx?type=0&s=1&Keyword=ph%E1%BB%A5%20gia%20th%E1%BB%B1c%20ph%E1%BA%A9m
+    kind: html
+
+  - id: vn-vfa
+    market: Việt Nam
+    name: Cục An toàn thực phẩm – mục văn bản
+    url: https://vfa.gov.vn/van-ban
+    kind: html
+    manual: true
+    note: Trang chặn công cụ tự động, cần mở kiểm tra thủ công.
+
+  - id: us-ecfr-172
+    market: Mỹ
+    name: 21 CFR Part 172 (phụ gia thực phẩm trực tiếp)
+    url: https://www.ecfr.gov/api/versioner/v1/structure/current/title-21.json
+    kind: json
+    json_path: ["identifier"]
+    note: API eCFR trả về cấu trúc tiêu đề 21; đổi nội dung nghĩa là có sửa đổi.
+
+  - id: us-ecfr-changes
+    market: Mỹ
+    name: eCFR – nhật ký sửa đổi Title 21 (90 ngày gần nhất)
+    url: https://www.ecfr.gov/api/versioner/v1/versions/title-21.json
+    kind: json
+
+  - id: us-fda-dyes
+    market: Mỹ
+    name: FDA – theo dõi loại bỏ phẩm màu tổng hợp
+    url: https://www.fda.gov/food/color-additives-information-consumers/tracking-food-industry-pledges-remove-petroleum-based-food-dyes
+    kind: html
+
+  - id: au-sch15
+    market: Úc/NZ
+    name: FSANZ Schedule 15 (bản hiện hành)
+    url: https://www.legislation.gov.au/F2015L00439/latest/text
+    kind: html
+
+  - id: au-sch16
+    market: Úc/NZ
+    name: FSANZ Schedule 16 (bản hiện hành)
+    url: https://www.legislation.gov.au/F2015L00442/latest/text
+    kind: html
+
+  - id: au-notices
+    market: Úc/NZ
+    name: FSANZ – thông báo thay đổi tiêu chuẩn
+    url: https://www.foodstandards.gov.au/food-standards-code/changes
+    kind: html
+
+  - id: th-moph
+    market: Thái Lan
+    name: Thai FDA – thông báo Bộ Y tế về phụ gia
+    url: https://food.fda.moph.go.th/food-law/announ-moph-468/
+    kind: html
+
+  - id: th-law-list
+    market: Thái Lan
+    name: Thai FDA – danh mục văn bản thực phẩm
+    url: https://en.fda.moph.go.th/cat2-health-products/
+    kind: html
+
+  - id: eu-1333
+    market: EU
+    name: Quy định (EC) 1333/2008 – bản hợp nhất trên EUR-Lex
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02008R1333-20260818
+    kind: html
+
+  - id: eu-oj-additives
+    market: EU
+    name: EUR-Lex – tìm quy định mới về food additives
+    url: https://eur-lex.europa.eu/search.html?scope=EURLEX&text=food+additives&lang=en&type=quick&sortOne=DD&sortOneOrder=desc
+    kind: html
+
+  - id: hk-cfs-news
+    market: Hồng Kông
+    name: CFS – tin mới về tiêu chuẩn an toàn thực phẩm
+    url: https://www.cfs.gov.hk/english/whatsnew/whatsnew_fstr/whatsnew_fstr.html
+    kind: html
+
+  - id: hk-cap132bd
+    market: Hồng Kông
+    name: Cap. 132BD trên e-Legislation
+    url: https://www.elegislation.gov.hk/hk/cap132BD
+    kind: html
+    manual: true
+    note: e-Legislation chặn công cụ tự động; theo dõi qua tin CFS, mở tay khi cần.
+
+  - id: tw-tfda-news
+    market: Đài Loan
+    name: TFDA – thông báo sửa đổi tiêu chuẩn phụ gia
+    url: https://www.fda.gov.tw/TC/newsList.aspx?cid=3
+    kind: html
+
+  - id: tw-standard
+    market: Đài Loan
+    name: Tiêu chuẩn phạm vi & giới hạn phụ gia (MOHW)
+    url: https://www.mohw.gov.tw/cp-16-79776-1.html
+    kind: html
+
+  - id: mn-faolex
+    market: Mông Cổ
+    name: FAOLEX – văn bản Mông Cổ về phụ gia thực phẩm
+    url: https://www.fao.org/faolex/results/en/?query=food%20additives&country=MNG
+    kind: html

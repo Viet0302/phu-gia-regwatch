@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Theo dõi văn bản phụ gia thực phẩm</title>
+<meta name="description" content="Bảng theo dõi văn bản pháp luật về phụ gia thực phẩm tại Codex và 8 thị trường, cập nhật hằng ngày.">
+<link rel="alternate" type="application/rss+xml" title="Nhật ký thay đổi" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Theo dõi văn bản phụ gia thực phẩm</h1>
+      <p class="sub">Codex và 8 thị trường · kiểm tra tự động mỗi ngày · dựng lúc {{UPDATED}}</p>
+    </div>
+    <div class="tools">
+      <a class="tbtn" href="tra-cuu.html">Mở sổ tra phụ gia</a>
+      <a class="tbtn" href="feed.xml">Đăng ký RSS</a>
+      <a class="tbtn" href="changelog.json">Dữ liệu JSON</a>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="st"><div class="k">Nguồn theo dõi</div><div class="v">{{N_SRC}}</div></div>
+    <div class="st ok"><div class="k">Kiểm tra tự động</div><div class="v">{{N_OK}}</div></div>
+    <div class="st man"><div class="k">Cần kiểm tra tay</div><div class="v">{{N_MAN}}</div></div>
+    <div class="st err"><div class="k">Không truy cập được</div><div class="v">{{N_ERR}}</div></div>
+    <div class="st hi"><div class="k">Thay đổi 30 ngày qua</div><div class="v">{{N_RECENT}}</div></div>
+  </section>
+
+  <section>
+    <h2>Nguồn đang theo dõi</h2>
+    <div class="tblwrap">
+    <table>
+      <thead><tr><th>Thị trường</th><th>Văn bản / trang nguồn</th><th>Trạng thái</th><th>Kiểm tra gần nhất</th><th>Thay đổi gần nhất</th></tr></thead>
+      <tbody>
+{{ROWS}}
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nhật ký thay đổi</h2>
+    <p class="hint">Mỗi mục là một lần nội dung trang nguồn khác đi so với lần kiểm tra trước. Dòng <span class="dl add">+</span> là phần thêm, <span class="dl del">-</span> là phần mất đi. Đây là tín hiệu để mở văn bản gốc kiểm tra, không phải kết luận pháp lý.</p>
+    <ul class="log">
+{{LOG}}
+    </ul>
+  </section>
+
+  <footer>
+    <p><b>Cách hoạt động:</b> mỗi sáng, máy chủ GitHub Actions mở lần lượt các trang nguồn, lấy phần nội dung, so với bản lưu hôm trước. Có khác biệt thì ghi vào nhật ký này, tạo một issue trong kho mã và cập nhật trang. Toàn bộ chạy trên hạ tầng của công ty, không phụ thuộc bên thứ ba.</p>
+    <p><b>Giới hạn:</b> một số cổng thông tin chặn truy cập tự động (robots.txt hoặc tường lửa). Những nguồn đó được đánh dấu “Kiểm tra thủ công” và cần người mở định kỳ. Trang này theo dõi thay đổi văn bản, không tự sửa dữ liệu tra cứu — việc cập nhật dữ liệu do bộ phận phụ trách duyệt.</p>
+  </footer>
+</div>
+</body>
+</html>

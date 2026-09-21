@@ -1,0 +1,85 @@
+name: Theo dõi văn bản phụ gia
+
+on:
+  schedule:
+    - cron: "0 1 * * *"      # 01:00 UTC = 08:00 giờ Việt Nam, chạy mỗi ngày
+  workflow_dispatch:          # cho phép bấm chạy tay
+
+permissions:
+  contents: write             # ghi lại data/state.json, data/changelog.json
+  issues: write               # mở issue khi có thay đổi
+  pages: write
+  id-token: write
+
+concurrency:
+  group: regwatch
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.run.outputs.changed }}
+      count: ${{ steps.run.outputs.count }}
+      summary: ${{ steps.run.outputs.summary }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Cài thư viện
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          pip install -r requirements.txt
+
+      - name: Kiểm tra các nguồn
+        id: run
+        run: python scripts/check_sources.py
+
+      - name: Dựng trang
+        run: python scripts/build_site.py
+
+      - name: Lưu kết quả vào kho mã
+        run: |
+          git config user.name "regwatch-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/state.json data/changelog.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Theo dõi văn bản: $(date -u +%d/%m/%Y)"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Mở issue khi có thay đổi
+        if: steps.run.outputs.changed == 'true'
+        continue-on-error: true          # lỗi ở bước báo tin không được chặn việc xuất bản trang
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # nhãn chưa có trong kho mã mới -> tạo trước, đã có thì bỏ qua
+          gh label create "quy-dinh" --color "B45309" --description "Thay đổi văn bản pháp luật về phụ gia" 2>/dev/null || true
+          printf '%s\n' \
+            "Phát hiện ${{ steps.run.outputs.count }} thay đổi trong ngày $(date -u +%d/%m/%Y):" \
+            "" \
+            "${{ steps.run.outputs.summary }}" \
+            "" \
+            "Mở trang theo dõi để xem trích đoạn thay đổi và quyết định có cập nhật dữ liệu hay không." > /tmp/body.md
+          gh issue create --title "Văn bản phụ gia có thay đổi — $(date -u +%d/%m/%Y)" --body-file /tmp/body.md --label "quy-dinh" \
+            || gh issue create --title "Văn bản phụ gia có thay đổi — $(date -u +%d/%m/%Y)" --body-file /tmp/body.md
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site_out
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
