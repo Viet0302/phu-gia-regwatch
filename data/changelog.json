@@ -1,1 +1,134 @@
-[]
+[
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:05Z",
+  "id": "vn-tt24-vcci",
+  "market": "Việt Nam",
+  "name": "TT 24/2019/TT-BYT trên cổng VCCI",
+  "url": "https://vanban.vcci.com.vn/thong-tu-242019tt-byt-quy-dinh-ve-quan-ly-va-su-dung-phu-gia-thuc-pham",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 23688
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:07Z",
+  "id": "us-ecfr-172",
+  "market": "Mỹ",
+  "name": "21 CFR Part 172 (phụ gia thực phẩm trực tiếp)",
+  "url": "https://www.ecfr.gov/api/versioner/v1/structure/current/title-21.json",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 2839438
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:07Z",
+  "id": "us-ecfr-changes",
+  "market": "Mỹ",
+  "name": "eCFR – nhật ký sửa đổi Title 21 (90 ngày gần nhất)",
+  "url": "https://www.ecfr.gov/api/versioner/v1/versions/title-21.json",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 31062
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:11Z",
+  "id": "au-sch15",
+  "market": "Úc/NZ",
+  "name": "FSANZ Schedule 15 (bản hiện hành)",
+  "url": "https://www.legislation.gov.au/F2015L00439/latest/text",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 640
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:12Z",
+  "id": "au-sch16",
+  "market": "Úc/NZ",
+  "name": "FSANZ Schedule 16 (bản hiện hành)",
+  "url": "https://www.legislation.gov.au/F2015L00442/latest/text",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 653
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:13Z",
+  "id": "au-notices",
+  "market": "Úc/NZ",
+  "name": "FSANZ – thông báo thay đổi tiêu chuẩn",
+  "url": "https://www.foodstandards.gov.au/food-standards-code/changes",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 5427
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:17Z",
+  "id": "th-moph",
+  "market": "Thái Lan",
+  "name": "Thai FDA – thông báo Bộ Y tế về phụ gia",
+  "url": "https://food.fda.moph.go.th/food-law/announ-moph-468/",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 5099
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:21Z",
+  "id": "th-law-list",
+  "market": "Thái Lan",
+  "name": "Thai FDA – danh mục văn bản thực phẩm",
+  "url": "https://en.fda.moph.go.th/cat2-health-products/",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 5784
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:25Z",
+  "id": "hk-cfs-news",
+  "market": "Hồng Kông",
+  "name": "CFS – tin mới về tiêu chuẩn an toàn thực phẩm",
+  "url": "https://www.cfs.gov.hk/english/whatsnew/whatsnew_fstr/whatsnew_fstr.html",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 9296
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:27Z",
+  "id": "tw-tfda-news",
+  "market": "Đài Loan",
+  "name": "TFDA – thông báo sửa đổi tiêu chuẩn phụ gia",
+  "url": "https://www.fda.gov.tw/TC/newsList.aspx?cid=3",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 178
+ },
+ {
+  "date": "2026-09-21",
+  "ts": "2026-09-21T15:33:30Z",
+  "id": "tw-standard",
+  "market": "Đài Loan",
+  "name": "Tiêu chuẩn phạm vi & giới hạn phụ gia (MOHW)",
+  "url": "https://www.mohw.gov.tw/cp-16-79776-1.html",
+  "kind": "bắt đầu theo dõi",
+  "diff": [],
+  "chars_before": 0,
+  "chars_after": 620
+ }
+]
