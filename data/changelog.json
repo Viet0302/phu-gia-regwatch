@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-09-22",
+  "ts": "2026-09-22T05:54:14Z",
+  "id": "th-moph",
+  "market": "Thái Lan",
+  "name": "Thai FDA – thông báo Bộ Y tế về phụ gia",
+  "url": "https://food.fda.moph.go.th/food-law/announ-moph-468/",
+  "kind": "thay đổi nội dung",
+  "diff": [],
+  "chars_before": 5099,
+  "chars_after": 5167
+ },
+ {
   "date": "2026-09-21",
   "ts": "2026-09-21T15:33:05Z",
   "id": "vn-tt24-vcci",
